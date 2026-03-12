@@ -1,10 +1,16 @@
+import os
+import time
 import random
+
+def limpar_tela():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 jogadas = ['pedra', 'papel', 'tesoura']
 
 meu_placar = 0
 placar_pc = 0
 
+limpar_tela()
 print("")
 print("==== BEM-VINDO AO JOGO PEDRA, PAPEL OU TESOURA ====")
 
@@ -50,6 +56,7 @@ while True:
     continuar = input()
 
     if continuar == '0':
+        limpar_tela()
         print("")
         print("Você decidiu encerrar! Obrigado por jogar aqui")
         print("")
@@ -57,8 +64,9 @@ while True:
         print(f"         Você: {meu_placar}      ")
         print(f"         Máquina: {placar_pc}      ")
         print("")
-        print("Desligando jogo...")
         break
     else: 
         print("")
         print("Você decidiu continuar jogando!")
+        time.sleep(2)
+        limpar_tela()
